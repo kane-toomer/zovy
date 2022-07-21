@@ -24,7 +24,7 @@ I am building the backend using:
     PostgresSQL
     Heroku
     
-    (it's overkill I know but I figured that if I want fullstack roles that I would make fullstack apps using relational databases w/ proper connectors.)
+(it's overkill I know but I figured that if I want fullstack roles that I would make fullstack apps using relational databases w/ proper connectors.)
     
     
 On the frontend users can sign up or sign in and the database will store their user credentials. They will be able to browse the various programs that are listed and view the trailers via a pop up YouTube video player. Users can filter through the titles to search for their desired program.
