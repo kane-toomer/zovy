@@ -1,38 +1,38 @@
-.App {
-  text-align: center;
+#header {
+  /* background-image: url("./assets/patternBG.svg"); */
+  background-color: #00000020;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.glass-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  box-shadow: o 8px 32px o rgba(0, 0, 0, 0.37);
+  border-radius: 32px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#movie-jumbotron {
+  background-image: url("./assets/topgun.svg");
+  background-color: #00000040;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#shows-jumbotron {
+  background-image: url("./assets/fullHouse.svg");
+  background-color: #00000050;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media (max-width: 992px) {
+  .poster {
+    display: none;
   }
 }
