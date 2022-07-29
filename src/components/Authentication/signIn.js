@@ -24,11 +24,11 @@ function SignIn() {
                                     <label className="form-label" for="password">Password</label>
                                 </div>
 
-                                <div className="pt-1 mb-4">
+                                <div className="pt-1 mb-4 d-flex justify-content-center">
                                     <button className="btn btn-danger btn-lg btn-block" type="button">Sign In</button>
                                 </div>
 
-                                <p>Don't have an account? <a href="#" className="link-danger">Register here</a></p>
+                                <p className='text-center'>Don't have an account? <a href="#" className="link-danger">Register here</a></p>
 
                             </form>
                         </div>

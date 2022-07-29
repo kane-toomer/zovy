@@ -19,7 +19,7 @@ function Landing() {
     return (
         <>
             {/* Jumbotron */}
-            <section className="p-4" id="header1">
+            <section className="container-fluid p-4" id="header1">
                 {/* Navigation Bar */}
                 <nav className="navbar navbar-expand-lg">
                     <div className="container">
@@ -31,12 +31,12 @@ function Landing() {
                         </ul>
                     </div>
                 </nav>
-                <div className="container p-5">
-                    <div className="px-4 py-5 my-5 text-center">
-                        <div className="col-lg-6 mx-auto">
-                            <h1 className="display-5 fw-bold lh-1 mx-auto text-white mb-4">A Video Vault of 80's & 90's Classics</h1>
-                            <p className="lead mb-5 text-white fw-normal">Someone said the best things in life are free... So, you can watch all of your favorites for free!</p>
-                            <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <div className="container p-5 mt-5">
+                    <div class="row align-items-center g-5 py-5">
+                        <div class="col-12 col-lg-7">
+                            <h1 className="display-2 fw-bold lh-2 mb-4">A Video Vault of 80's and 90's Classics</h1>
+                            <p className="lead mb-5 fw-normal">Someone said the best things in life are free... Stream all of your 80's and 90's classics on Zovy. Unlimited titles, unlimted devices and all commercial free! </p>
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                                 <button type="button" className="btn btn-danger btn-lg py-3 px-5">Get Started</button>
                             </div>
                         </div>
