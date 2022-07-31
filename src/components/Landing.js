@@ -1,18 +1,18 @@
 import React from 'react';
 
-import '../../App.css';
+import '../App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGlobe, faTv, faDesktop } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faGithub, faXbox, faPlaystation, faApple, faAndroid,   } from '@fortawesome/free-brands-svg-icons';
 
-import poster1  from '../../assets/bevHillsCop.svg';
-import poster2  from '../../assets/goodfellas.svg';
-import poster3  from '../../assets/terminator.svg';
-import poster4  from '../../assets/pulpfiction.svg';
-import poster5 from '../../assets/friends.svg';
-import poster6  from '../../assets/heman.svg';
-import poster7 from '../../assets/inLivingColor.svg';
-import poster8  from '../../assets/cheers.svg';
+import poster1  from '../assets/bevHillsCop.svg';
+import poster2  from '../assets/goodfellas.svg';
+import poster3  from '../assets/terminator.svg';
+import poster4  from '../assets/pulpfiction.svg';
+import poster5 from '../assets/friends.svg';
+import poster6  from '../assets/heman.svg';
+import poster7 from '../assets/inLivingColor.svg';
+import poster8  from '../assets/cheers.svg';
 
 function Landing() {
 
