@@ -5,13 +5,13 @@ import Card from './Card';
 
 function Streaming() {
 
-    return(
+    return (
         <>
             {/* Navbar */}
             <StreamingNavbar />
-            
+
             {/* Card List*/}
-            <div className="container py-5">
+            <div className="container-fluid mt-5 pe-3">
                 <Card />
             </div>
         </>
