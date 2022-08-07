@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import '../App.css';
 
-function StreamingNavbar() {
+function StreamingNavbar({ searchChange }) {
     const [shouldShow, setShouldShow] = useState(false);
 
     const onAction = () => {
@@ -9,7 +9,7 @@ function StreamingNavbar() {
     }
 
     return (
-        <div className="container-fluid px-3">
+        <div className="container-fluid px-3 fixed">
             <header className="blog-header lh-1 py-3">
                 <div className="row flex-nowrap justify-content-between align-items-center">
                     <div className="col-4">
@@ -29,7 +29,7 @@ function StreamingNavbar() {
                 shouldShow ? (
                     <form>
                         <div className="form-outline my-4">
-                            <input type="text" id="search" className="form-control form-control-lg" placeholder='Search Zovy...' />
+                            <input type="text" id="search" className="form-control form-control-lg" placeholder='Search Zovy...' onChange={searchChange} />
                         </div>
                     </form>
                 ) : null

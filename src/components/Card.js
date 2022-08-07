@@ -1,15 +1,12 @@
 import React from 'react';
-
 import '../App.css';
 
-import poster3 from '../assets/terminator.svg';
-
-function Card() {
+function Card({ actors, genre, rated, released, plot, poster, title }) {
 
     return (
         <>
             <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" className="card card-cover overflow-hidden text-bg-dark rounded-2 shadow-lg" style={{ height: 300, width: 200 }}>
-                <img src={poster3} />
+                <img src={poster} />
             </a>
 
 
@@ -23,16 +20,18 @@ function Card() {
                         <div className="modal-body">
                             <div className="d-flex">
                                 <div className="card card-cover overflow-hidden text-bg-dark rounded-2 shadow-lg" style={{ height: 150, width: 100 }}>
-                                    <img src={poster3} />
+                                    <img src={poster} />
                                 </div>
                                 <div>
-                                    <h2 className="modal-title fw-bold ms-3" id="exampleModalLabel">Movie Title</h2>
+                                    <h2 className="modal-title fw-bold ms-3" id="exampleModalLabel">{title}</h2>
+                                    <p className="ms-3 pb-2">Release Date: {released}</p>
                                 </div>
                             </div>
                             <div className="container mt-3">
-                                <p className="pb-2">Genre: </p>
-                                <p className="pb-2">Rating: </p>
-                                <p className="pb-2">Synopsis: </p>
+                                <p className="pb-2">Genre: {genre}</p>
+                                <p className="pb-2">Rating: {rated}</p>
+                                <p className="pb-2">Staring: {actors}</p>
+                                <p className="pb-2">Synopsis: {plot}</p>
                             </div>
                         </div>
                         <div className="modal-footer border-top-0">
