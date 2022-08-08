@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import StreamingNavbar from "./StreamingNavbar";
-import Scroll from "./Scroll";
 import ErrorBoundry from "./ErrorBoundry";
 import CardList from "./CardList";
 
@@ -25,18 +24,16 @@ function Streaming() {
     })
 
     return !movies.length ? <h5 className="fw-bold text-center mt-5 pt-5">Loading...</h5> : (
-        <>
+        <div className="mb-5">
             {/* Navbar */}
             <StreamingNavbar searchChange={onSearchChange} />
 
             {/* Card List*/}
-            <Scroll>
-                <ErrorBoundry>
-                    {/* Card List */}
-                    <CardList movies={filteredMovies} />
-                </ErrorBoundry>
-            </Scroll>
-        </>
+            <ErrorBoundry>
+                {/* Card List */}
+                <CardList movies={filteredMovies} />
+            </ErrorBoundry>
+        </div>
     );
 
 }

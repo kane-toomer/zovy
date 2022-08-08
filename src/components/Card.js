@@ -5,13 +5,12 @@ function Card({ actors, genre, rated, released, plot, poster, title }) {
 
     return (
         <>
-            <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" className="card card-cover overflow-hidden text-bg-dark rounded-2 shadow-lg" style={{ height: 300, width: 200 }}>
-                <img src={poster} />
+            <a href="#movieModal" data-bs-toggle="modal" className="card card-cover overflow-hidden text-bg-dark rounded-2 shadow-lg m-4" style={{ height: 300, width: 200 }}>
+                <img src={poster} style={{ height: 300, width: 200 }} />
             </a>
 
-
             {/* <!-- Modal --> */}
-            <div className="modal modal-sheet fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal modal-sheet fade" id="movieModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">
                         <div className="modal-header pb-4 border-bottom-0">
@@ -19,8 +18,8 @@ function Card({ actors, genre, rated, released, plot, poster, title }) {
                         </div>
                         <div className="modal-body">
                             <div className="d-flex">
-                                <div className="card card-cover overflow-hidden text-bg-dark rounded-2 shadow-lg" style={{ height: 150, width: 100 }}>
-                                    <img src={poster} />
+                                <div className="card card-cover overflow-hidden text-bg-dark rounded-2 shadow-lg">
+                                    <img src={poster} style={{ height: 150, width: 100 }} />
                                 </div>
                                 <div>
                                     <h2 className="modal-title fw-bold ms-3" id="exampleModalLabel">{title}</h2>
@@ -28,10 +27,10 @@ function Card({ actors, genre, rated, released, plot, poster, title }) {
                                 </div>
                             </div>
                             <div className="container mt-3">
-                                <p className="pb-2">Genre: {genre}</p>
-                                <p className="pb-2">Rating: {rated}</p>
-                                <p className="pb-2">Staring: {actors}</p>
-                                <p className="pb-2">Synopsis: {plot}</p>
+                                <p className="pb-2">Genre: <strong>{genre}</strong></p>
+                                <p className="pb-2">Rating: <strong>{rated}</strong></p>
+                                <p className="pb-2">Staring: <strong>{actors}</strong></p>
+                                <p className="pb-2">Synopsis: <strong>{plot}</strong></p>
                             </div>
                         </div>
                         <div className="modal-footer border-top-0">

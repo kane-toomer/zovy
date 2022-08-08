@@ -19,7 +19,7 @@ function CardList({ movies }) {
     })
 
     return (
-        <div>
+        <div className='row'>
             {cardArray}
         </div>
     );
