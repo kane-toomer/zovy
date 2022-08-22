@@ -14,7 +14,7 @@ import poster6 from '../assets/heman.svg';
 import poster7 from '../assets/inLivingColor.svg';
 import poster8 from '../assets/cheers.svg';
 
-function Landing() {
+function Landing({ onRouteChange }) {
 
     return (
         <>
@@ -26,7 +26,7 @@ function Landing() {
                         <a className="navbar-brand text-white fw-bold" href="#">Zovy</a>
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <a className="nav-link fw-bold text-white active" aria-current="page" href="#">Sign In</a>
+                                <a className="nav-link fw-bold text-white active" aria-current="page" href="#" onClick={() => onRouteChange('signin')}>Sign In</a>
                             </li>
                         </ul>
                     </div>
@@ -37,7 +37,7 @@ function Landing() {
                         <h1 className="display-5 fw-bold lh-2 mb-4 text-white">A Video Vault of 80's and 90's Classics</h1>
                         <p className="lead mb-5 fw-normal text-white">Someone said the best things in life are free... Stream all of your 80's and 90's classics on Zovy. Unlimited titles, unlimted devices and all commercial free! </p>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                            <button type="button" className="btn btn-danger btn-lg py-3 px-5">Get Started</button>
+                            <button type="button" className="btn btn-danger btn-lg py-3 px-5" onClick={() => onRouteChange('register')}>Get Started</button>
                         </div>
                     </div>
                 </div>
@@ -52,7 +52,7 @@ function Landing() {
                         <p className="lead text-white">Fall in love with familiar favorites all over again in a growing collection right here on Zovy.</p>
                         <div className="d-grid gap-3 d-md-flex justify-content-md-start">
                             <button type="button" class="btn btn-primary btn-lg px-4 py-3 me-md-2 mt-3 d-none d-md-block">Sign Up, it's free!</button>
-                            <p className="lead display-6 text-white d-block d-md-none pt-5">Sign Up, anytime it's free!</p>
+                            <p className="lead display-6 text-white d-block d-md-none pt-5" onClick={() => onRouteChange('register')}>Sign Up, anytime it's free!</p>
                         </div>
                     </div>
                 </div>
@@ -88,7 +88,7 @@ function Landing() {
                         <p className="lead text-white">The best time is family time. Watch all of your family favorites right here on Zovy.</p>
                         <div className="d-grid gap-3 d-md-flex justify-content-md-start">
                             <button type="button" class="btn btn-primary btn-lg px-4 py-3 me-md-2 mt-3 d-none d-md-block">Sign Up, it's free!</button>
-                            <p className="lead display-6 text-white d-block d-md-none pt-5">Sign Up, anytime it's free!</p>
+                            <p className="lead display-6 text-white d-block d-md-none pt-5" onClick={() => onRouteChange('register')}>Sign Up, anytime it's free!</p>
                         </div>
                     </div>
                 </div>
@@ -144,7 +144,7 @@ function Landing() {
                         <h1 className="display-5 fw-bold lh-1 mb-3 text-white">Wow, you've made it this far?</h1>
                         <p className="lead text-white">Why haven't you signed up yet? We are the only streaming service that is completely free... What are you waiting for? Sign up!</p>
                         <div className="d-flex justify-content-center">
-                            <button type="button" class="btn btn-danger btn-lg px-4 py-3 me-md-2 mt-3">Sign Up, seriously!</button>
+                            <button type="button" class="btn btn-danger btn-lg px-4 py-3 me-md-2 mt-3" onClick={() => onRouteChange('register')}>Sign Up, seriously!</button>
                         </div>
                     </div>
                     <div className="col-lg-3 py-4"></div>
