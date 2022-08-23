@@ -2,7 +2,7 @@ import React from 'react';
 
 import '../App.css';
 
-function SignIn() {
+const SignIn = () => {
 
     return (
         <section className="vh-100 bg-light" >
@@ -15,20 +15,20 @@ function SignIn() {
                                 <h2 className="fw-bold display-6 mb-3 pb-3" style={{ letterSpacing: '1px' }}>We knew you'd be back!</h2>
 
                                 <div className="form-outline mb-4">
-                                    <input type="email" id="email" className="form-control form-control-lg" />
+                                    <input type="email" id="email" className="form-control form-control-lg" required />
                                     <label className="form-label" for="email">Email address</label>
                                 </div>
 
                                 <div className="form-outline mb-4">
-                                    <input type="password" id="password" className="form-control form-control-lg" />
+                                    <input type="password" id="password" className="form-control form-control-lg" required />
                                     <label className="form-label" for="password">Password</label>
                                 </div>
 
                                 <div className="pt-1 mb-4 d-flex justify-content-center">
-                                    <button className="btn btn-danger btn-lg btn-block" type="button" >Sign In</button>
+                                    <button className="btn btn-danger btn-lg btn-block" type="button">Sign In</button>
                                 </div>
 
-                                <p className='text-center'>Don't have an account? <a href="#" className="link-danger">Register here</a></p>
+                                <p className='text-center'>Don't have an account? <span className="link-danger">Register here</span></p>
 
                             </form>
                         </div>

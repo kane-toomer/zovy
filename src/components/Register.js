@@ -2,7 +2,8 @@ import React from 'react';
 
 import '../App.css';
 
-function Register() {
+const Register = () => {
+
     return (
         <section className="vh-100 bg-light" >
             <div className="container-fluid">
@@ -19,20 +20,20 @@ function Register() {
                                 <p className='lead'>Register to start streaming all of your 80's & 90's favorites!</p>
 
                                 <div className="form-outline mb-4">
-                                    <input type="email" id="email" className="form-control form-control-lg" />
+                                    <input type="email" id="email" className="form-control form-control-lg" required />
                                     <label className="form-label" for="email">Email address</label>
                                 </div>
 
                                 <div className="form-outline mb-4">
-                                    <input type="password" id="password" className="form-control form-control-lg" />
+                                    <input type="password" id="password" className="form-control form-control-lg" required />
                                     <label className="form-label" for="password">Password</label>
                                 </div>
 
                                 <div className="pt-1 mb-4 d-flex justify-content-center">
-                                    <button className="btn btn-danger btn-lg btn-block" type="button" >Register</button>
+                                    <button className="btn btn-danger btn-lg btn-block" type="button">Register</button>
                                 </div>
 
-                                <p className='text-center'>Already have an account? <a href="#" className="link-danger">Sign In here</a></p>
+                                <p className='text-center'>Already have an account? <span className="link-danger">Sign In here</span></p>
 
                             </form>
                         </div>

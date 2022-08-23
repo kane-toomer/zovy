@@ -1,23 +1,17 @@
 import React from 'react';
-import Register from './components/Register';
 import SignIn from './components/SignIn';
-import Landing from './components/Landing';
 import Streaming from './components/Streaming';
+import Register from './components/Register';
 
 
-function App {
-
-
-
-
+const App = () => {
 
 
 
-  render() {
-    return (
-      
-    )
-  }
+  return (
+    <Register />
+  );
+
 }
 
 export default App;
