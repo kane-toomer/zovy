@@ -20,7 +20,9 @@ function Streaming() {
 
 
     const filteredMovies = movies.filter(movie => {
-        return movie.title.toLowerCase().includes(searchfield.toLowerCase());
+        return (
+            movie.title.toLowerCase().includes(searchfield.toLowerCase())
+        );
     })
 
     return !movies.length ? <h5 className="fw-bold text-center mt-5 pt-5">Loading...</h5> : (

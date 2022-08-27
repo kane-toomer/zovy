@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import '../App.css';
 
-const StreamingNavbar = ({ searchChange, ...onRouteChange }) => {
+const StreamingNavbar = ({ searchChange }) => {
     const [shouldShow, setShouldShow] = useState(false);
 
     const onAction = () => {
@@ -37,7 +37,7 @@ const StreamingNavbar = ({ searchChange, ...onRouteChange }) => {
                 ) : null
             }
             <hr />
-            <div className="scroll_nav py-1 mb-2">
+            {/* <div className="scroll_nav py-1 mb-2">
                 <nav className="nav">
                     <ul className="ul">
                         <a className="p-2 link-secondary" href="#">All Content</a>
@@ -52,7 +52,7 @@ const StreamingNavbar = ({ searchChange, ...onRouteChange }) => {
                         <a className="p-2 link-secondary" href="#">TV Shows</a>
                     </ul>
                 </nav>
-            </div>
+            </div> */}
         </div>
     );
 }
