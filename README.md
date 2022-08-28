@@ -13,16 +13,14 @@ I am building the frontend using:
     React.js
       - React Hooks
       - React Router
-      - React Forms
     Bootstrap
    
 I am building the backend using:
 
     Node.js
-    Express.js
     Knex.js
     PostgresSQL
-    Heroku
+    Heroku ~ might need to change since Heroku is no longer free
     
 (it's overkill I know but I figured that if I want fullstack roles that I would make fullstack apps using relational databases w/ proper connectors.)
     
