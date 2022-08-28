@@ -1,14 +1,30 @@
-// import React from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import Landing from './components/Landing';
 import SignIn from './components/SignIn';
 import Streaming from './components/Streaming';
-// import Register from './components/Register';
+import Register from './components/Register';
 
-
-const App = () => {
-
+function App() {
 
   return (
-    <Streaming />
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Landing />
+        </Route>
+        <Route exact path="/signin">
+          <SignIn />
+        </Route>
+        <Route exact path="/register">
+          <Register />
+        </Route>
+        <Route exact path="/browse">
+          <Streaming />
+        </Route>
+      </Switch>
+    </Router >
   );
 
 }
