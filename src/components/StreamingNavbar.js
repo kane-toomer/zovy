@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
-import { logout, useAuth } from "../lib/firebase";
+import { logout } from "../lib/firebase";
 
 import '../App.css';
 
 const StreamingNavbar = ({ searchChange }) => {
-    const [loading, setLoading] = useState(false);
-    const currentUser = useAuth();
     const [shouldShow, setShouldShow] = useState(false);
     const navigate = useNavigate();
 
@@ -15,7 +13,6 @@ const StreamingNavbar = ({ searchChange }) => {
     }
 
     async function handleLogout() {
-        setLoading(true);
         try {
             await logout()
                 .then(() => {
@@ -24,7 +21,6 @@ const StreamingNavbar = ({ searchChange }) => {
         } catch {
             alert("Error!");
         }
-        setLoading(false);
     }
 
     return (
