@@ -15,7 +15,6 @@ I am building this app using:
       - React Router
     Bootstrap
     Firebase
-    Netlify
     
 On the frontend users can sign up or sign in and the database will store their user credentials. They will be able to browse the various programs that are listed and view the "trailers" via a pop up YouTube video player. Users can filter through the titles to search for their desired program.
 
