@@ -1,30 +1,26 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
+import { useNavigate } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { signIn, auth } from "../lib/firebase";
 
 import '../App.css';
 
-const SignIn = ({ props }) => {
-    const [user, setUser] = useState('');
+const SignIn = () => {
+    const [error] = useAuthState(auth);
+    const navigate = useNavigate();
+    const emailRef = useRef();
+    const passwordRef = useRef();
 
-
-    // NEEDS FURTHER SETUP W/ DATABASE
-    const handleSignIn = (e) => {
-        e.preventDefault()
-        fetch('', {
-            method: 'POST',
-            body: JSON.stringify({ user }),
-            headers: { 'Content-Type': 'application/json' },
-        })
-            .then(res => res.json())
-            .then(user => {
-                props.loadUser(user)
-                props.onRouteChange('streaming')
-            })
-    };
-
-    // const authOptions = {
-    //     email: { required: "Email is required" },
-    //     password: { required: "Password is required" }
-    // };
+    async function handleSignIn() {
+        try {
+            await signIn(emailRef.current.value, passwordRef.current.value)
+                .then(() => {
+                    navigate("/browse");
+                })
+        } catch {
+            alert(error.message);
+        }
+    }
 
     return (
         <section className="vh-100 bg-light" >
@@ -32,8 +28,11 @@ const SignIn = ({ props }) => {
                 <div className="row">
                     <div className="col-sm-12 col-md-6 text-black d-flex justify-content-sm-center">
                         <div className="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
-                            <form style={{ width: '23rem' }} onSubmit={handleSignIn}>
-                                <h2 className="fw-bold display-6 mb-3 pb-3" style={{ letterSpacing: '1px' }}>We knew you'd be back!</h2>
+                            <div style={{ width: '23rem' }}>
+
+
+                                <h2 className="fw-bold display-6 mb-3 pb-3 text-center" style={{ letterSpacing: '1px' }}>We knew you'd be back!</h2>
+                                <p className='lead text-center mb-5'>Sign in to get started!</p>
 
                                 {/* EMAIL */}
                                 <div className="form-group mb-4">
@@ -42,9 +41,9 @@ const SignIn = ({ props }) => {
                                         type="email"
                                         name="email"
                                         className="form-control"
-                                        value={user.email}
-                                        onChange={e => setUser({ ...user, email: e.target.value })}
+                                        ref={emailRef}
                                     />
+
                                 </div>
 
                                 {/* PASSWORD */}
@@ -54,23 +53,28 @@ const SignIn = ({ props }) => {
                                         type="password"
                                         name="password"
                                         className="form-control"
-                                        value={user.password}
-                                        onChange={e => setUser({ ...user, password: e.target.value })}
+                                        ref={passwordRef}
                                     />
 
                                 </div>
 
                                 {/* SIGN IN BUTTON */}
                                 <div className="pt-1 mb-4 d-flex justify-content-center">
-                                    <button type="submit" className="btn btn-danger btn-lg btn-block" >Sign In</button>
+                                    <button
+                                        type="submit"
+                                        className="btn btn-danger btn-lg btn-block"
+                                        onClick={handleSignIn}
+                                    >
+                                        Sign In
+                                    </button>
                                 </div>
 
                                 {/* REGISTER ROUTING */}
 
                                 <div className="container d-flex justify-content-center">
-                                    <a href="/register" className="routing">Don't have an account? <span className="link-danger">Register here</span></a>
+                                    <p className="routing">Don't have an account? <a href="/register" className="link-danger">Register here</a></p>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                     <div className="col-md-6 px-0 d-none d-md-block">

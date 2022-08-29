@@ -1,35 +1,27 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
+import { useNavigate } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { register, auth } from "../lib/firebase";
 
 import '../App.css';
 
-const Register = ({ props }) => {
-    const [user, setUser] = useState('');
+const Register = () => {
+    const [error] = useAuthState(auth);
+    const navigate = useNavigate();
+    const emailRef = useRef();
+    const passwordRef = useRef();
 
-    // NEEDS FURTHER SETUP W/ DATABASE
-    const handleRegistration = e => {
-        e.preventDefault()
-        fetch('', {
-            method: 'POST',
-            body: JSON.stringify({ user }),
-            headers: { 'Content-Type': 'application/json' },
-        })
-            .then(res => res.json())
-            .then(user => {
-                props.loadUser(user)
-                props.onRouteChange('streaming')
-            })
-    };
+    async function handleRegistration() {
+        try {
+            await register(emailRef.current.value, passwordRef.current.value)
+                .then(() => {
+                    navigate("/browse");
+                })
+        } catch {
+            alert(error.message);
+        }
+    }
 
-    // const authOptions = {
-    //     email: { required: "Email is required" },
-    //     password: {
-    //         required: "Password is required",
-    //         minLength: {
-    //             value: 8,
-    //             message: "Password must have at least 8 characters"
-    //         }
-    //     }
-    // };
 
     return (
         <section className="vh-100 bg-light" >
@@ -41,8 +33,9 @@ const Register = ({ props }) => {
                     </div>
                     <div className="col-sm-12 col-md-6 text-black d-flex justify-content-sm-center">
                         <div className="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
-                            <form style={{ width: '23rem' }} onSubmit={handleRegistration}>
-                                <h2 className="fw-bold display-6 mb-3 pb-3" style={{ letterSpacing: '1px' }}>We knew you'd be back!</h2>
+                            <div style={{ width: '23rem' }}>
+                                <h2 className="fw-bold display-6 mb-3 pb-3 text-center" style={{ letterSpacing: '1px' }}>Welcome to Zovy!</h2>
+                                <p className='lead text-center mb-5'>Register to start streaming all of your 80's & 90's favorites!</p>
 
                                 {/* EMAIL */}
                                 <div className="form-group mb-4">
@@ -51,8 +44,7 @@ const Register = ({ props }) => {
                                         type="email"
                                         name="email"
                                         className="form-control"
-                                        value={user.email}
-                                        onChange={e => setUser({ ...user, email: e.target.value })}
+                                        ref={emailRef}
                                     />
                                 </div>
 
@@ -63,22 +55,20 @@ const Register = ({ props }) => {
                                         type="password"
                                         name="password"
                                         className="form-control"
-                                        value={user.password}
-                                        onChange={e => setUser({ ...user, password: e.target.value })}
+                                        ref={passwordRef}
                                     />
-
                                 </div>
 
-                                {/* SIGN IN BUTTON */}
+                                {/* REGISTER BUTTON */}
                                 <div className="pt-1 mb-4 d-flex justify-content-center">
-                                    <button type="submit" className="btn btn-danger btn-lg btn-block">Sign In</button>
+                                    <button type="submit" className="btn btn-danger btn-lg btn-block" onClick={handleRegistration} >Register</button>
                                 </div>
 
-                                {/* REGISTER ROUTING */}
+                                {/* SIGN IN ROUTING */}
                                 <div className="container d-flex justify-content-center">
-                                    <a href="/signin" className='routing text-center'>Already have an account? <span className="link-danger">Sign in here</span></a>
+                                    <p className='routing text-center'>Already have an account? <a href="/signin" className="link-danger">Sign in here</a></p>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>

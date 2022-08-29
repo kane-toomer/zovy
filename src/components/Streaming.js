@@ -3,9 +3,12 @@ import StreamingNavbar from "./StreamingNavbar";
 import ErrorBoundry from "./ErrorBoundry";
 import CardList from "./CardList";
 
+import { useAuth } from "../lib/firebase";
+
 function Streaming() {
     const [movies, setMovies] = useState([]);
     const [searchfield, setSearchfield] = useState('');
+    const currentUser = useAuth();
 
     useEffect(() => {
         fetch('https://kane-toomer.github.io/Data/movies.json')
@@ -27,6 +30,11 @@ function Streaming() {
 
     return !movies.length ? <h5 className="fw-bold text-center mt-5 pt-5">Loading...</h5> : (
         <div className="mb-5">
+
+            {/* Who's logged in */}
+
+            <div className="text-center mt-3">Currently logged in as: <span className="fw-bold">{currentUser?.email}</span> </div>
+
             {/* Navbar */}
             <StreamingNavbar searchChange={onSearchChange} />
 

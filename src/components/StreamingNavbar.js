@@ -1,11 +1,30 @@
 import React, { useState } from 'react'
+import { useNavigate } from "react-router-dom";
+import { logout, useAuth } from "../lib/firebase";
+
 import '../App.css';
 
 const StreamingNavbar = ({ searchChange }) => {
+    const [loading, setLoading] = useState(false);
+    const currentUser = useAuth();
     const [shouldShow, setShouldShow] = useState(false);
+    const navigate = useNavigate();
 
     const onAction = () => {
         setShouldShow(!shouldShow);
+    }
+
+    async function handleLogout() {
+        setLoading(true);
+        try {
+            await logout()
+                .then(() => {
+                    navigate("/");
+                })
+        } catch {
+            alert("Error!");
+        }
+        setLoading(false);
     }
 
     return (
@@ -21,7 +40,7 @@ const StreamingNavbar = ({ searchChange }) => {
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"></circle><path d="M21 21l-5.2-5.2"></path></svg>
                         </a>
 
-                        <a href="/" className="btn btn-outline-secondary ms-3"> Sign Out </a>
+                        <button className="btn btn-outline-secondary ms-3" onClick={handleLogout}> Sign Out </button>
                     </div>
                 </div>
             </header>
