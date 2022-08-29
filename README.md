@@ -17,10 +17,7 @@ I am building the frontend using:
    
 I am building the backend using:
 
-    Node.js
-    Knex.js
-    PostgresSQL
-    Heroku ~ might need to change since Heroku is no longer free
+    Firebase
     
 (it's overkill I know but I figured that if I want fullstack roles that I would make fullstack apps using relational databases w/ proper connectors.)
     
