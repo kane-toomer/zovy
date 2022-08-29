@@ -173,7 +173,7 @@ const Landing = () => {
                             </a>
                         </li>
                         <li class="ms-3">
-                            <a class="text-muted" href="#">
+                            <a class="text-muted" href="https://kanetoomer.com">
                                 <FontAwesomeIcon icon={faGlobe} />
                             </a>
                         </li>
