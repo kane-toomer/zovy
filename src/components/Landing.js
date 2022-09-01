@@ -26,7 +26,7 @@ const Landing = () => {
                         <a className="navbar-brand text-white fw-bold" href="#">Zovy</a>
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <a href="/signin" className="nav-link fw-bold text-white active" aria-current="page">Sign In</a>
+                                <a href="/zovy/signin" className="nav-link fw-bold text-white active" aria-current="page">Sign In</a>
                             </li>
                         </ul>
                     </div>
@@ -38,7 +38,7 @@ const Landing = () => {
                             <h1 className="display-5 fw-bold lh-2 mb-4 text-white">A Video Vault of 80's and 90's Classics</h1>
                             <p className="lead mb-5 fw-normal text-white">Someone said the best things in life are free... Stream all of your 80's and 90's classics on Zovy. Unlimited titles, unlimted devices and all commercial free! </p>
                             <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                                <a href="/register" type="button" className="btn btn-danger btn-lg py-3 px-5">Get Started</a>
+                                <a href="/zovy/register" type="button" className="btn btn-danger btn-lg py-3 px-5">Get Started</a>
                             </div>
                         </div>
                     </div>
@@ -54,7 +54,7 @@ const Landing = () => {
                             <h1 className="display-5 fw-bold lh-1 mb-3 text-white">The movies you love</h1>
                             <p className="lead text-white">Fall in love with familiar favorites all over again in a growing collection right here on Zovy.</p>
                             <div className="d-grid gap-3 d-md-flex justify-content-md-start">
-                                <a href="/register" type="button" class="btn btn-primary btn-lg px-4 py-3 me-md-2 mt-3 d-none d-md-block">Sign Up, it's free!</a>
+                                <a href="/zovy/register" type="button" class="btn btn-primary btn-lg px-4 py-3 me-md-2 mt-3 d-none d-md-block">Sign Up, it's free!</a>
                                 <p className="lead display-6 text-white d-block d-md-none pt-5">Sign Up, anytime it's free!</p>
                             </div>
                         </div>
@@ -92,7 +92,7 @@ const Landing = () => {
                             <h1 className="display-5 fw-bold lh-1 mb-3 text-white">Family time like it's 1995</h1>
                             <p className="lead text-white">The best time is family time. Watch all of your family favorites right here on Zovy.</p>
                             <div className="d-grid gap-3 d-md-flex justify-content-md-start">
-                                <a href="/register" type="button" class="btn btn-primary btn-lg px-4 py-3 me-md-2 mt-3 d-none d-md-block">Sign Up, it's free!</a>
+                                <a href="/zovy/register" type="button" class="btn btn-primary btn-lg px-4 py-3 me-md-2 mt-3 d-none d-md-block">Sign Up, it's free!</a>
                                 <p className="lead display-6 text-white d-block d-md-none pt-5">Sign Up, anytime it's free!</p>
                             </div>
                         </div>
@@ -150,7 +150,7 @@ const Landing = () => {
                         <h1 className="display-5 fw-bold lh-1 mb-3 text-white">Wow, you've made it this far?</h1>
                         <p className="lead text-white">Why haven't you signed up yet? We are the only streaming service that is completely free... What are you waiting for? Sign up!</p>
                         <div className="d-flex justify-content-center">
-                            <a href="/register" type="button" class="btn btn-danger btn-lg px-4 py-3 me-md-2 mt-3">Sign Up, seriously!</a>
+                            <a href="/zovy/register" type="button" class="btn btn-danger btn-lg px-4 py-3 me-md-2 mt-3">Sign Up, seriously!</a>
                         </div>
                     </div>
                     <div className="col-lg-3 py-4"></div>
@@ -173,7 +173,7 @@ const Landing = () => {
                             </a>
                         </li>
                         <li class="ms-3">
-                            <a class="text-muted" href="https://kanetoomer.com">
+                            <a class="text-muted" href="https://kane-toomer.github.io/portfolio/">
                                 <FontAwesomeIcon icon={faGlobe} />
                             </a>
                         </li>
