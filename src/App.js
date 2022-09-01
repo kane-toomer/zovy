@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Landing from './components/Landing';
 import SignIn from './components/SignIn';
@@ -9,12 +9,14 @@ import Register from './components/Register';
 function App() {
 
   return (
-    <Routes>
-      <Route exact path="/" element={<Landing />} />
-      <Route exact path="/signin" element={<SignIn />} />
-      <Route exact path="/register" element={<Register />} />
-      <Route exact path="/browse" element={<Streaming />} />
-    </Routes>
+    <Router>
+      <Routes>
+        <Route exact path="/zovy/" element={<Landing />} />
+        <Route exact path="/zovy/signin" element={<SignIn />} />
+        <Route exact path="/zovy/register" element={<Register />} />
+        <Route exact path="/zovy/browse" element={<Streaming />} />
+      </Routes>
+    </Router>
   );
 
 }
