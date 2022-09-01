@@ -11,10 +11,10 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/zovy/" element={<Landing />} />
-        <Route exact path="/zovy/signin" element={<SignIn />} />
-        <Route exact path="/zovy/register" element={<Register />} />
-        <Route exact path="/zovy/browse" element={<Streaming />} />
+        <Route exact path="/" element={<Landing />} />
+        <Route exact path="/signin" element={<SignIn />} />
+        <Route exact path="/register" element={<Register />} />
+        <Route exact path="/browse" element={<Streaming />} />
       </Routes>
     </Router>
   );
