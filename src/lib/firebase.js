@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import firebase from 'firebase';
+import 'firebase';
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
@@ -43,4 +43,4 @@ export function useAuth() {
     return currentUser;
 }
 
-export { auth, app, firebase }
+export { auth, app }
