@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { register, auth } from "../lib/firebase";
 
+import logo from '../assets/mememoji2.svg';
+
 import '../App.css';
 
 const Register = () => {
@@ -22,61 +24,58 @@ const Register = () => {
         }
     }
 
-
     return (
-        <section className="vh-100 bg-light" >
-            <div className="container-fluid">
-                <div className="row">
-                    <div className="col-md-6 px-0 d-none d-md-block">
-                        <img src="https://media.giphy.com/media/l0MYGb1LuZ3n7dRnO/giphy.gif"
-                            alt="Loginimg" className="w-100 vh-100" style={{ objectFit: 'cover', objectPosition: 'left' }} />
-                    </div>
-                    <div className="col-sm-12 col-md-6 text-black d-flex justify-content-sm-center">
-                        <div className="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
-                            <div style={{ width: '23rem' }}>
-                                <h2 className="fw-bold display-6 mb-3 pb-3 text-center" style={{ letterSpacing: '1px' }}>Welcome to Zovy!</h2>
-                                <p className='lead text-center mb-5'>Register to start streaming all of your 80's & 90's favorites!</p>
-
-                                {/* EMAIL */}
-                                <div className="form-group mb-4">
-                                    <label className="form-label" for="email">Email address</label>
-                                    <input
-                                        type="email"
-                                        name="email"
-                                        className="form-control"
-                                        ref={emailRef}
-                                    />
-                                </div>
-
-                                {/* PASSWORD */}
-                                <div className="form-group mb-4">
-                                    <label className="form-label" for="password">Password</label>
-                                    <input
-                                        type="password"
-                                        name="password"
-                                        className="form-control"
-                                        ref={passwordRef}
-                                    />
-                                </div>
-
-                                {/* REGISTER BUTTON */}
-                                <div className="pt-1 mb-4 d-flex justify-content-center">
-                                    <button type="submit" className="btn btn-danger btn-lg btn-block" onClick={handleRegistration} >Register</button>
-                                </div>
-
-                                {/* SIGN IN ROUTING */}
-                                <div className="container d-flex justify-content-center">
-                                    <p className='routing text-center'>Already have an account? <a href="/signin" className="link-danger">Sign in here</a></p>
-                                </div>
-                            </div>
+        <>
+            <main className="relative flex flex-1 flex-col overflow-hidden py-8 px-4 sm:px-6 lg:px-8">
+                <div className="relative flex flex-1 flex-col items-center justify-center pt-12 pb-16">
+                    <div className="w-full max-w-sm">
+                        <div className="flex justify-center mb-10">
+                            <img
+                                className="h-36 w-auto"
+                                src={logo}
+                                alt="Your Company"
+                            />
                         </div>
+                        <h2 className="font-bold text-3xl mb-3 pb-3 text-center" style={{ letterSpacing: '1px' }}>Welcome to Zovy!</h2>
+                        <p className='text-base text-xl text-center mb-5'>Register to start streaming all of your 80's & 90's favorites!</p>
+
+                        <div className="mb-6">
+                            <label htmlFor="email" className="block text-sm font-semibold leading-6 text-gray-900">Email</label>
+                            <input
+                                type="email"
+                                name="email"
+                                className="mt-2 appearance-none text-slate-900 bg-white rounded-md block w-full px-3 h-10 shadow-sm sm:text-sm focus:outline-none placeholder:text-slate-400 focus:ring-2 focus:ring-sky-500 ring-1 ring-slate-200"
+                                required
+                                ref={emailRef}
+                            />
+                        </div>
+                        <div className="mb-6">
+                            <label htmlFor="email" className="block text-sm font-semibold leading-6 text-gray-900">Password</label>
+                            <input
+                                type="password"
+                                name="password"
+                                className="mt-2 appearance-none text-slate-900 bg-white rounded-md block w-full px-3 h-10 shadow-sm sm:text-sm focus:outline-none placeholder:text-slate-400 focus:ring-2 focus:ring-sky-500 ring-1 ring-slate-200"
+                                required
+                                ref={passwordRef}
+                            />
+                        </div>
+                        <button
+                            type="submit"
+                            className="inline-flex justify-center rounded-lg text-sm font-semibold py-2.5 px-4 bg-blue-700 text-white hover:bg-blue-900 w-full"
+                            onClick={handleRegistration}
+                        >
+                            <span>Sign Up</span>
+                        </button>
                     </div>
                 </div>
-            </div>
-        </section>
+                <footer className="relative shrink-0">
+                    <div className="space-y-4 text-sm text-gray-900 sm:flex sm:items-center sm:justify-center sm:space-y-0 sm:space-x-4">
+                        <p className="text-center sm:text-left">Already have an account? <a className="font-bold underline text-blue-800" href='/signin'>Sign In Instead</a></p>
+                    </div>
+                </footer>
+            </main>
+        </>
     );
-
 }
 
 export default Register;
-

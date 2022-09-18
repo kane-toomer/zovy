@@ -1,9 +1,8 @@
-import React from 'react';
-
-import '../App.css';
+import React, { Fragment } from 'react';
+import { Disclosure } from '@headlessui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGlobe, faTv, faDesktop } from '@fortawesome/free-solid-svg-icons';
-import { faLinkedin, faGithub, faXbox, faPlaystation, faApple, faAndroid, } from '@fortawesome/free-brands-svg-icons';
+import { faTv, faDesktop } from '@fortawesome/free-solid-svg-icons';
+import { faXbox, faPlaystation, faApple, faAndroid, } from '@fortawesome/free-brands-svg-icons';
 
 import poster1 from '../assets/bevHillsCop.svg';
 import poster2 from '../assets/goodfellas.svg';
@@ -12,182 +11,295 @@ import poster4 from '../assets/pulpfiction.svg';
 import poster5 from '../assets/friends.svg';
 import poster6 from '../assets/heman.svg';
 import poster7 from '../assets/inLivingColor.svg';
-import poster8 from '../assets/cheers.svg';
+import poster8 from '../assets/topgun.svg';
+import poster9 from '../assets/fullHouse.svg';
+import logo from '../assets/mememoji2.svg';
+
+import '../assets/landing.css';
 
 const Landing = () => {
 
     return (
         <>
-            {/* Jumbotron */}
-            <section className="container-fluid p-5" id="header1">
-                {/* Navigation Bar */}
-                <nav className="navbar navbar-expand-lg">
-                    <div className="container">
-                        <a className="navbar-brand text-white fw-bold" href="#">Zovy</a>
-                        <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li className="nav-item">
-                                <a href="/signin" className="nav-link fw-bold text-white active" aria-current="page">Sign In</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
+            <div className="bg-[url('https://tailwindui.com/img/beams-home@95.jpg')]">
+                {/* NAVIGATION BAR */}
+                <Disclosure as="nav" className=" pt-5 px-4 pb-20">
+                    {({ open }) => (
+                        <>
+                            <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+                                <div className="relative flex h-16 items-center justify-between">
+                                    <div className="flex flex-1 items-center sm:items-stretch">
+                                        <div className="flex flex-shrink-0 items-center">
+                                            <img
+                                                className="block h-20 w-auto lg:block"
+                                                src={logo}
+                                                alt="Your Company"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                                        <a
+                                            href="/signin"
+                                            className="flex w-full items-center justify-center rounded-md px-3 py-1 text-base font-medium text-indigo-700 hover:bg-indigo-700 hover:text-white md:py-4 md:px-10 md:text-lg"
+                                        >
+                                            Sign In
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </>
+                    )}
+                </Disclosure>
+                {/* END NAVIGATION BAR */}
 
-                <div className="container">
-                    <div class="row align-items-center g-5 py-5 mt-5">
-                        <div class="col-12 col-lg-7">
-                            <h1 className="display-5 fw-bold lh-2 mb-4 text-white">A Video Vault of 80's and 90's Classics</h1>
-                            <p className="lead mb-5 fw-normal text-white">Someone said the best things in life are free... Stream all of your 80's and 90's classics on Zovy. Unlimited titles, unlimted devices and all commercial free! </p>
-                            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                                <a href="/register" type="button" className="btn btn-danger btn-lg py-3 px-5">Get Started</a>
+                {/* HERO */}
+                <div className="relative overflow-hidden">
+                    <div className="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
+                        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
+                            <div className="sm:max-w-lg">
+                                <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
+                                    <span className="block xl:inline">A Video Vault of</span>{' '}
+                                    <span className="block text-indigo-600 xl:inline">80's and 90's Classics</span>
+                                </h1>
+                                <p className="mt-4 text-xl text-gray-500">
+                                    Someone said the best things in life are free... Stream all of your 80's and 90's classics on Zovy. Unlimited titles, unlimted devices and all commercial free!
+                                </p>
+                            </div>
+                            <div>
+                                <div className="mt-10">
+                                    {/* Decorative image grid */}
+                                    <div
+                                        aria-hidden="true"
+                                        className="pointer-events-none lg:absolute lg:inset-y-0 lg:mx-auto lg:w-full lg:max-w-7xl"
+                                    >
+                                        <div className="absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
+                                            <div className="flex items-center space-x-6 lg:space-x-8">
+                                                <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                                                    <div className="h-64 w-44 overflow-hidden rounded-lg sm:opacity-0 lg:opacity-100">
+                                                        <img
+                                                            src={poster1}
+                                                            alt=""
+                                                            className="h-full w-full object-cover object-center"
+                                                        />
+                                                    </div>
+                                                    <div className="h-64 w-44 overflow-hidden rounded-lg">
+                                                        <img
+                                                            src={poster2}
+                                                            alt=""
+                                                            className="h-full w-full object-cover object-center"
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                                                    <div className="h-64 w-44 overflow-hidden rounded-lg">
+                                                        <img
+                                                            src={poster3}
+                                                            alt=""
+                                                            className="h-full w-full object-cover object-center"
+                                                        />
+                                                    </div>
+                                                    <div className="h-64 w-44 overflow-hidden rounded-lg">
+                                                        <img
+                                                            src={poster4}
+                                                            alt=""
+                                                            className="h-full w-full object-cover object-center"
+                                                        />
+                                                    </div>
+                                                    <div className="h-64 w-44 overflow-hidden rounded-lg">
+                                                        <img
+                                                            src={poster5}
+                                                            alt=""
+                                                            className="h-full w-full object-cover object-center"
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                                                    <div className="h-64 w-44 overflow-hidden rounded-lg">
+                                                        <img
+                                                            src={poster6}
+                                                            alt=""
+                                                            className="h-full w-full object-cover object-center"
+                                                        />
+                                                    </div>
+                                                    <div className="h-64 w-44 overflow-hidden rounded-lg">
+                                                        <img
+                                                            src={poster7}
+                                                            alt=""
+                                                            className="h-full w-full object-cover object-center"
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a
+                                        href="/register"
+                                        className="inline-block rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-center font-medium text-white hover:bg-indigo-700"
+                                    >
+                                        Get Started
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                {/* END HERO */}
+            </div>
 
-            </section>
+            {/* SECTION 1 - MOVIES */}
+            <div className="bg-white py-40">
+                <div className="relative overflow-hidden">
+                    <div className="mx-auto max-w-7xl">
+                        <div className="bg-gray-30 pb-8 sm:pb-16 md:pb-20 lg:w-full lg:max-w-2xl lg:pb-28 xl:pb-32">
+                            <main className="mx-auto mt-10 max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+                                <div className="sm:text-center lg:text-left">
+                                    <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
+                                        <span className="block xl:inline">Stream nostalgia</span>{' '}
+                                        <span className="block text-indigo-600 xl:inline">on demand</span>
+                                    </h1>
+                                    <p className="mt-3 text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0">
+                                        Fall in love with familiar favorites all over again in a growing collection right here on Zovy.
+                                    </p>
+                                    <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                                        <div className="rounded-md shadow">
+                                            <a
+                                                href="/register"
+                                                className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 md:py-4 md:px-10 md:text-lg"
+                                            >
+                                                Sign up, it's free!
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </main>
+                        </div>
+                    </div>
+                    <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+                        <img
+                            className="h-56 w-full object-cover sm:h-72 md:h-96 lg:h-full lg:w-full"
+                            src={poster8}
+                            alt=""
+                        />
+                    </div>
+                </div>
+            </div>
+            {/* END SECTION 1 - MOVIES */}
 
-            {/* MOVIES - Call to Action */}
-            <div className="container-fluid col-xxl-8 px-4 py-5" id="movie-jumbotron">
-                <div className="container">
-                    <div className="row g-5 py-5">
-                        <div className="col-lg-6 pt-5">
-                            <h1 className="display-5 fw-bold lh-1 mb-3 text-white">The movies you love</h1>
-                            <p className="lead text-white">Fall in love with familiar favorites all over again in a growing collection right here on Zovy.</p>
-                            <div className="d-grid gap-3 d-md-flex justify-content-md-start">
-                                <a href="/register" type="button" class="btn btn-primary btn-lg px-4 py-3 me-md-2 mt-3 d-none d-md-block">Sign Up, it's free!</a>
-                                <p className="lead display-6 text-white d-block d-md-none pt-5">Sign Up, anytime it's free!</p>
+            {/* SECTION 2 - TV SHOWS */}
+            <div className="bg-white bg-[url('https://tailwindui.com/img/beams-components.png')] lg:py-40">
+                <div className="relative overflow-hidden">
+                    <div className="mx-auto max-w-7xl">
+                        <div className="pb-8 sm:pb-16 md:pb-20 lg:w-full lg:max-w-2xl lg:pb-28 xl:pb-32">
+                            <main className="mx-auto mt-10 max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+                                <div className="sm:text-center lg:text-left">
+                                    <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
+                                        <span className="block xl:inline">Family time</span>{' '}
+                                        <span className="block text-indigo-600 xl:inline">like it's 1995</span>
+                                    </h1>
+                                    <p className="mt-3 text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0">
+                                        The best time is family time. Watch all of your family favorites right here on Zovy.
+                                    </p>
+                                    <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                                        <div className="rounded-md shadow">
+                                            <a
+                                                href="/register"
+                                                className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 md:py-4 md:px-10 md:text-lg"
+                                            >
+                                                Sign up, it's free!
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </main>
+                        </div>
+                    </div>
+                    <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+                        <img
+                            className="h-56 w-full object-cover sm:h-72 md:h-96 lg:h-full lg:w-full"
+                            src={poster9}
+                            alt=""
+                        />
+                    </div>
+                </div>
+            </div>
+            {/* END SECTION 2 - TV SHOWS */}
+
+            {/* WAYS TO WATCH */}
+            <div className="bg-white py-12">
+                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                    <div className="lg:text-center">
+                        <h2 className="text-lg font-semibold text-indigo-600">How to Stream</h2>
+                        <p className="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl">
+                            Stream Zovy on all of your devices
+                        </p>
+                        <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                            Stream Zovy on unlimited devices, from your phone to your smart watch. You can view your favorite anywhere, anytime and on any device!
+                        </p>
+                    </div>
+
+                    <div className="mt-16">
+                        <dl className="flex justify-content-center space-x-6 text-gray-700">
+                            <div className="flex items-center justify-center rounded-md">
+                                <FontAwesomeIcon icon={faTv} className="h-6 w-6" />
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div className='row align-items-center g-5 pt-5 mt-5'>
-                    <div className='col-3 d-none d-md-block'>
-                        <div className="card card-cover h-100 overflow-hidden text-bg-dark rounded-2 shadow-lg">
-                            <img src={poster1} />
-                        </div>
-                    </div>
-                    <div className='col-3 d-none d-md-block'>
-                        <div className="card card-cover h-100 overflow-hidden text-bg-dark rounded-2 shadow-lg" >
-                            <img src={poster2} />
-                        </div>
-                    </div>
-                    <div className='col-3 d-none d-md-block'>
-                        <div className="card card-cover h-100 overflow-hidden text-bg-dark rounded-2 shadow-lg">
-                            <img src={poster3} />
-                        </div>
-                    </div>
-                    <div className='col-3 d-none d-md-block'>
-                        <div className="card card-cover h-100 overflow-hidden text-bg-dark rounded-2 shadow-lg">
-                            <img src={poster4} />
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {/* SHOWS - Call to Action */}
-            <div className="container-fluid col-xxl-8 px-4 py-5" id="shows-jumbotron">
-                <div className="container">
-                    <div className="row g-5 py-5">
-                        <div className="col-lg-6 pt-5">
-                            <h1 className="display-5 fw-bold lh-1 mb-3 text-white">Family time like it's 1995</h1>
-                            <p className="lead text-white">The best time is family time. Watch all of your family favorites right here on Zovy.</p>
-                            <div className="d-grid gap-3 d-md-flex justify-content-md-start">
-                                <a href="/register" type="button" class="btn btn-primary btn-lg px-4 py-3 me-md-2 mt-3 d-none d-md-block">Sign Up, it's free!</a>
-                                <p className="lead display-6 text-white d-block d-md-none pt-5">Sign Up, anytime it's free!</p>
+                            <div className="flex items-center justify-center rounded-md">
+                                <FontAwesomeIcon icon={faApple} className="h-6 w-6" />
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div className='row align-items-center g-5 pt-5 mt-5'>
-                    <div className='col-3 d-none d-md-block'>
-                        <div className="card card-cover h-100 overflow-hidden text-bg-dark rounded-2 shadow-lg">
-                            <img src={poster5} />
-                        </div>
-                    </div>
-                    <div className='col-3 d-none d-md-block'>
-                        <div className="card card-cover h-100 overflow-hidden text-bg-dark rounded-2 shadow-lg">
-                            <img src={poster6} />
-                        </div>
-                    </div>
-                    <div className='col-3 d-none d-md-block'>
-                        <div className="card card-cover h-100 overflow-hidden text-bg-dark rounded-2 shadow-lg">
-                            <img src={poster7} />
-                        </div>
-                    </div>
-                    <div className='col-3 d-none d-md-block'>
-                        <div className="card card-cover h-100 overflow-hidden text-bg-dark rounded-2 shadow-lg">
-                            <img src={poster8} />
-                        </div>
+                            <div className="flex items-center justify-center rounded-md">
+                                <FontAwesomeIcon icon={faAndroid} className="h-6 w-6" />
+                            </div>
+                            <div className="flex items-center justify-center rounded-md">
+                                <FontAwesomeIcon icon={faDesktop} className="h-6 w-6" />
+                            </div>
+                            <div className="flex items-center justify-center rounded-md">
+                                <FontAwesomeIcon icon={faXbox} className="h-6 w-6" />
+                            </div>
+                            <div className="flex items-center justify-center rounded-md">
+                                <FontAwesomeIcon icon={faPlaystation} className="h-6 w-6" />
+                            </div>
+                        </dl>
                     </div>
                 </div>
             </div>
+            {/* END WAYS TO WATCH */}
 
-            {/* WAYS TO WATCH - Call to Action */}
-            <div className="container-fluid px-4 py-5 glass-card" >
-                <div className="row text-center g-5 py-4">
-                    <div className="col-lg-3 py-4"></div>
-                    <div className="col-lg-6 py-4">
-                        <h1 className="display-5 fw-bold lh-1 mb-3 text-white">Watch Zovy on all of your devices</h1>
-                        <p className="lead text-white">Stream Zovy on unlimited devices, from your phone to your smart watch. You can view your favorite anywhere, anytime and on any device!</p>
-                        <div className="text-white">
-                            <FontAwesomeIcon icon={faTv} className="mx-2" size="lg" />
-                            <FontAwesomeIcon icon={faApple} className="mx-2" size="xl" />
-                            <FontAwesomeIcon icon={faAndroid} className="mx-2" size="xl" />
-                            <FontAwesomeIcon icon={faDesktop} className="mx-2" size="lg" />
-                            <FontAwesomeIcon icon={faXbox} className="mx-2" size="lg" />
-                            <FontAwesomeIcon icon={faPlaystation} className="mx-2" size="lg" />
-                        </div>
-                    </div>
-                    <div className="col-lg-3 py-4"></div>
-                </div>
-            </div>
-
-            {/*  LAST Call to Action */}
-            <div className="container-fluid px-4 py-5" id="header2" >
-                <div className="row text-center g-5 py-4">
-                    <div className="col-lg-3 py-4"></div>
-                    <div className="col-lg-6 py-4">
-                        <h1 className="display-5 fw-bold lh-1 mb-3 text-white">Wow, you've made it this far?</h1>
-                        <p className="lead text-white">Why haven't you signed up yet? We are the only streaming service that is completely free... What are you waiting for? Sign up!</p>
-                        <div className="d-flex justify-content-center">
-                            <a href="/register" type="button" class="btn btn-danger btn-lg px-4 py-3 me-md-2 mt-3">Sign Up, seriously!</a>
-                        </div>
-                    </div>
-                    <div className="col-lg-3 py-4"></div>
-                </div>
-            </div>
-
-
-            {/* Footer */}
-            <div class="container">
-                <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4">
-                    <div class="col-md-4 d-flex align-items-center">
-
-                        <span class="mb-3 mb-md-0 text-muted">© 2022 Kane Toomer</span>
-                    </div>
-
-                    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-                        <li class="ms-3">
-                            <a class="text-muted" href="https://www.linkedin.com/in/kanetoomer/">
-                                <FontAwesomeIcon icon={faLinkedin} />
+            {/* CTA */}
+            <div className="bg-gray-700">
+                <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:flex lg:items-center lg:justify-between lg:py-16 lg:px-8">
+                    <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                        <span className="block">Ready to dive in?</span>
+                        <span className="block text-indigo-500">Stream your favorites for free today.</span>
+                    </h2>
+                    <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+                        <div className="inline-flex rounded-md shadow">
+                            <a
+                                href="/register"
+                                className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-5 py-3 text-base font-medium text-white hover:bg-indigo-700"
+                            >
+                                Get started
                             </a>
-                        </li>
-                        <li class="ms-3">
-                            <a class="text-muted" href="https://kane-toomer.github.io/portfolio/">
-                                <FontAwesomeIcon icon={faGlobe} />
+                        </div>
+                        <div className="ml-3 inline-flex rounded-md shadow">
+                            <a
+                                href="/register"
+                                className="inline-flex items-center justify-center rounded-md bg-white px-5 py-3 text-base font-medium text-indigo-600 hover:bg-indigo-50"
+                            >
+                                Have an Account?
                             </a>
-                        </li>
-                        <li class="ms-3">
-                            <a class="text-muted" href="https://github.com/kane-toomer">
-                                <FontAwesomeIcon icon={faGithub} />
-                            </a>
-                        </li>
-
-                    </ul>
-                </footer>
+                        </div>
+                    </div>
+                </div>
             </div>
+            {/* END CTA */}
+
+            {/* FOOTER */}
+
+            {/* END FOOTER */}
         </>
     );
 }
 
 export default Landing;
+
+
+
