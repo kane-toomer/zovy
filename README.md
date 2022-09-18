@@ -13,7 +13,7 @@ I am building this app using:
     React.js
       - React Hooks
       - React Router
-    Bootstrap
+    Tailwind CSS
     Firebase
     Vercel
     
